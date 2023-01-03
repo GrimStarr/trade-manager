@@ -17,7 +17,7 @@ const style = {
 }
 
 const servers = () => {
-    const router = useRouter()
+    const Router = useRouter()
     const [servers,setServers] = useState<NewServerType[]>([])
     const [data, setData] = useState({
         name:'',
