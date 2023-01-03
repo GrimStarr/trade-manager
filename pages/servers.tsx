@@ -4,7 +4,6 @@ import { db, serverCollection } from '../config/controller'
 import { NewServerType } from '../types/server'
 import {AiOutlinePlus} from 'react-icons/ai'
 import ServerList from '../components/serverList'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 const style = {
@@ -17,7 +16,6 @@ const style = {
 }
 
 const servers = () => {
-    const Router = useRouter()
     const [servers,setServers] = useState<NewServerType[]>([])
     const [data, setData] = useState({
         name:'',
