@@ -95,7 +95,7 @@ const Dashboard = () => {
                 <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
                     
                     <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-4 bg-no-repeat bg-center bg-cover bg-picture">
-                        <h1 className="text-white font-medium text-3xl "onClick={() => {router.push('/servers')}} >Home</h1>
+                        <h1 className="text-white font-medium text-3xl "onClick={() => {router.push('/servers')}} >Hom</h1>
                         <div>
                     <p className='text-white italic text-lg'>Lez print some dollar<span onClick={() => {logout()}}>. </span></p>
                     </div>
