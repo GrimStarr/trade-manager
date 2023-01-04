@@ -15,8 +15,8 @@ const style = {
     button: `border p-4 bg-purple-500 text-slate-100`
 }
 
-const servers = () => {
-    const [servers,setServers] = useState<NewServerType[]>([])
+const Servers = () => {
+    const [servers,setServers] = useState<NewServerType[]>([]);
     const [data, setData] = useState({
         name:'',
         ip:'',
@@ -90,7 +90,7 @@ const servers = () => {
   )
 }
 
-export default servers
+export default Servers
 
 // const [servers, setServers] = useState<NewServerType[]>([])
 // useEffect(() => 
