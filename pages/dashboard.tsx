@@ -58,7 +58,7 @@ const Dashboard = () => {
         axios.post(`http://${value.ip}:5009/buy`,data)
             .then( response  => {
                 if(response.data.API === 'Respoinse Positive'){
-                    alert("Амжилттай ;)");
+                    // alert("Амжилттай ;)");
                     setData({
                         symbol:'XAUUSD',
                         type:'',
