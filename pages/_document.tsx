@@ -6,6 +6,7 @@ export default function Document() {
       <Head>
           <link rel="manifest" href="/manifest.json" />
           <link rel="icon" href="/favicon.ico"></link>
+          <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
           <meta name="theme-color" content="#fff" />
       </Head>
       <body>
