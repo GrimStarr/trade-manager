@@ -42,38 +42,43 @@ const Dashboard = () => {
 
     //post to server
     const fetchToServer = async (value:any) =>{
-        // const response = await fetch(`http://${value.ip}:5009/buy`,{
-        //     method: 'POST',
-        //     body: JSON.stringify(
-        //         value
-        //     ),
-        //     headers:{
-        //         'Content-Type':'application/json',
-        //     },
-        // })
-
-        // const data = await response.json()
-        // console.log(data)
-
-        axios.post(`https://${value.ip}:5009/buy`,data)
-            .then( response  => {
-                if(response.data.API === 'Respoinse Positive'){
-                    alert("Амжилттай ;)");
-                    setData({
-                        symbol:'XAUUSD',
-                        type:'',
-                        order:false,
-                        price:'',
-                        sl:0,
-                        tp1:'',
-                        tp2:'',
-                        tp3:'',
-                    })
-                }
+        
+        const res = await fetch(`https://${value.ip}:5009`,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: 'Testing sghit'
             })
-            .catch(err => {
-                console.log(err)
-            })
+        })
+
+        if (!res.ok) {
+            // This will activate the closest `error.js` Error Boundary
+            throw new Error('Failed to fetch data');
+          }
+        
+          return res.json();
+
+        // axios.post(`https://${value.ip}:5009/buy`,data)
+        //     .then( response  => {
+        //         if(response.data.API === 'Respoinse Positive'){
+        //             alert("Амжилттай ;)");
+        //             setData({
+        //                 symbol:'XAUUSD',
+        //                 type:'',
+        //                 order:false,
+        //                 price:'',
+        //                 sl:0,
+        //                 tp1:'',
+        //                 tp2:'',
+        //                 tp3:'',
+        //             })
+        //         }
+        //     })
+        //     .catch(err => {
+        //         console.log(err)
+        //     })
 
     }
 
@@ -95,7 +100,7 @@ const Dashboard = () => {
                 <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
                     
                     <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-4 bg-no-repeat bg-center bg-cover bg-picture">
-                        <h1 className="text-white font-medium text-3xl "onClick={() => {router.push('/servers')}} >Home</h1>
+                        <h1 className="text-white font-medium text-3xl "onClick={() => {router.push('/servers')}} >Homey</h1>
                         <div>
                     <p className='text-white italic text-lg'>Lez print some dollar<span onClick={() => {logout()}}>. </span></p>
                     </div>
