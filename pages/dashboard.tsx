@@ -43,14 +43,12 @@ const Dashboard = () => {
     //post to server
     const fetchToServer = async (value:any) =>{
         
-        const res = await fetch(`https://${value.ip}:5009`,{
+        const res = await fetch(`https://${value.ip}:5009/buy`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                name: 'Testing sghit'
-            })
+            body: JSON.stringify(data)
         })
 
         if (!res.ok) {
