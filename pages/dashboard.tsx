@@ -43,40 +43,42 @@ const Dashboard = () => {
     //post to server
     const fetchToServer = async (value:any) =>{
         
-        const res = await fetch(`http://${value.ip}:5009/buy`,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
+        // const res = await fetch(`http://${value.ip}:5009/buy`,{
 
-        if (!res.ok) {
-            // This will activate the closest `error.js` Error Boundary
-            throw new Error('Failed to fetch data');
-          }
+        // const res = await fetch(`https://demo.requestcatcher.com/`,{    
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+
+        // if (!res.ok) {
+        //     // This will activate the closest `error.js` Error Boundary
+        //     throw new Error('Failed to fetch data');
+        //   }
         
-          return res.json();
+        //   return res.json();
 
-        // axios.post(`https://${value.ip}:5009/buy`,data)
-        //     .then( response  => {
-        //         if(response.data.API === 'Respoinse Positive'){
-        //             alert("Амжилттай ;)");
-        //             setData({
-        //                 symbol:'XAUUSD',
-        //                 type:'',
-        //                 order:false,
-        //                 price:'',
-        //                 sl:0,
-        //                 tp1:'',
-        //                 tp2:'',
-        //                 tp3:'',
-        //             })
-        //         }
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //     })
+        axios.post(`https://demo.requestcatcher.com/test`,data)
+            .then( response  => {
+                if(response.data.API === 'Respoinse Positive'){
+                    alert("Амжилттай ;)");
+                    setData({
+                        symbol:'XAUUSD',
+                        type:'',
+                        order:false,
+                        price:'',
+                        sl:0,
+                        tp1:'',
+                        tp2:'',
+                        tp3:'',
+                    })
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
     }
 
