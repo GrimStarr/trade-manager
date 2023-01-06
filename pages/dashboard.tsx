@@ -60,7 +60,7 @@ const Dashboard = () => {
         
         //   return res.json();
 
-        axios.post(`https://demo.requestcatcher.com/test`,data)
+        axios.post(`https://eollbr3w24nr656.m.pipedream.net`,data)
             .then( response  => {
                 if(response.data.API === 'Respoinse Positive'){
                     alert("Амжилттай ;)");
