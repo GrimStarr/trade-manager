@@ -60,7 +60,7 @@ const Dashboard = () => {
         
         //   return res.json();
 
-        axios.post(`https://${value.ip}/buy:5009`,data)
+        axios.post(`https://${value.ip}/buy:${value.port}`,data)
             .then( response  => {
                 if(response.data.API === 'Respoinse Positive'){
                     alert("Амжилттай ;)");
