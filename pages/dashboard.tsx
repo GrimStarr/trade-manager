@@ -60,7 +60,7 @@ const Dashboard = () => {
         
         //   return res.json();
 
-        axios.post(`https://eollbr3w24nr656.m.pipedream.net`,data)
+        axios.post(`https://${value.ip}/buy:5009`,data)
             .then( response  => {
                 if(response.data.API === 'Respoinse Positive'){
                     alert("Амжилттай ;)");
