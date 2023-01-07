@@ -6,6 +6,8 @@ import { serverCollection } from '../config/controller'
 import { useAuth } from '../context/AuthContext'
 import { NewServerType } from '../types/server'
 import axios from 'axios'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
  
 const Dashboard = () => {
     const router = useRouter()
@@ -62,8 +64,11 @@ const Dashboard = () => {
 
         axios.post(`http://${value.ip}:5009/buy`,data)
             .then( response  => {
-                if(response.data.API === 'Respoinse Positive'){
-                    alert("Амжилттай ;)");
+                    response.data.map((value:string)=> (
+                        toast.success(value)
+                    ))
+                    toast.success(response.data);
+                    console.log(response.data)
                     setData({
                         symbol:'XAUUSD',
                         type:'',
@@ -74,19 +79,20 @@ const Dashboard = () => {
                         tp2:'',
                         tp3:'',
                     })
-                }
             })
             .catch(err => {
+                toast.error(err.response.data)
                 console.log("fuck",err)
             })
 
     }
 
+
     
 
     const sendOrder = async (e: any) => {
         e.preventDefault(e);
-
+        
         servers.map((server) => (
             fetchToServer(server)
         ));
@@ -96,6 +102,18 @@ const Dashboard = () => {
 
     return (
         <div className='bg-gradient-to-r from-[#9f7AEA] to-[#FEE2FE] block h-screen items-center justify-center p-4 md:flex'>
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover={false}
+                theme="colored"
+                />
             <div className="container mx-auto" >
                 <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
                     
