@@ -18,7 +18,6 @@ const ServerList = ({server, toggleActive, deleteServer}: any) => {
             <input className={style.input} onChange={() => toggleActive(server)} type="checkbox" checked={server.status ? false : true} />
             <p className={server.status ? style.text : style.textComplete}>{server.name}</p>
             <p className={server.status ? style.text : style.textComplete}>{server.ip}</p>
-            <p className={server.status ? style.text : style.textComplete}>{server.port}</p>
         </div>
             <button onClick={() => deleteServer(server.id)}>{<FaRegTrashAlt />}</button>
         

@@ -80,7 +80,6 @@ const Servers = () => {
             <form onSubmit={createServer} className={style.form}>
                 <input onChange={(e: any) => setData({...data, name: e.target.value,})} value={data.name} type='text' inputMode='text' className={style.input} placeholder='Name'/>
                 <input onChange={(e: any) => setData({...data, ip: e.target.value,})} value={data.ip} type='text' inputMode='decimal' className={style.input} placeholder='IP Address'/>
-                <input onChange={(e: any) => setData({...data, port: e.target.value,})} value={data.port} type='text' inputMode='decimal' className={style.input} placeholder='Port'/>
                 <button className={style.button}><AiOutlinePlus size={30} /></button>
             </form>
             <ul>
