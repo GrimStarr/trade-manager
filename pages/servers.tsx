@@ -20,7 +20,7 @@ const Servers = () => {
     const [data, setData] = useState({
         name:'',
         ip:'',
-        port:'',
+        // port:'',
         status:true,
     })
 
@@ -34,13 +34,13 @@ const Servers = () => {
         await addDoc(collection(db,'servers'),{
             name: data.name,
             ip: data.ip,
-            port: data.port,
+            // port: data.port,
             status: true
         })
         setData({
             name:'',
             ip:'',
-            port:'',
+            // port:'',
             status:true,
         })
     }

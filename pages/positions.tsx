@@ -70,12 +70,13 @@ const Positions = () => {
         <div  className="grid grid-cols-1 lg:grid-cols-4 gap-5 my-5">
         {servers.map((serv,index) => {
                       return <div key={index}>
+                    
                        <ServerCard server={serv} />
                      
                       </div>
                     })}
        
-  
+{/*   
         {
           BoardData.map((board,index) => {
             return(
@@ -109,7 +110,7 @@ const Positions = () => {
             )
     
           })
-        }
+        } */}
         </div>
       </DragDropContext>
       )}

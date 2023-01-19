@@ -23,17 +23,17 @@ const ServerCard = ({server}:any) => {
     // -- useSWT
 
     const fetcher = async () => {
-      const response = await fetch(`${server.ip}:5009/getPos`)
+      const response = await fetch(`http://${server.ip}:5009/getPos`)
       const data = await response.json()
         return data
       
     }
 
-    // const {data,error}:any = useSWR('positions',fetcher)
+    const {data,error}:any = useSWR(`http://${server.ip}:5009/getPos`,fetcher,{refreshInterval:1})
 
-    // if(error) return <div>"fuck you"</div>
-    // if(!data) return <div>'Loading'</div>
-    // console.log(data)
+    if(error) return <div>"fuck you"</div>
+    if(!data) return <div>'Loading'</div>
+
 
     // -- axios
 
@@ -59,7 +59,7 @@ const ServerCard = ({server}:any) => {
       <DotsVerticalIcon className='w-5 h-5 text-gray-500'/>
     </h4>
     
-    {positions.map((pos:any,index:any) => {
+    {data.positions.map((pos :any,index:any) => {
         return <div className='bg-white rounded-md p-3 mt-3'>
                <div className='flex justify-between'>
               <div className='flex space-x-4 items-center'>
