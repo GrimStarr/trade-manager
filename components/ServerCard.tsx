@@ -31,8 +31,8 @@ const ServerCard = ({server}:any) => {
 
     const {data,error}:any = useSWR(`http://${server.ip}:5009/getPos`,fetcher,{refreshInterval:1})
 
-    if(error) return <div>"fuck you"</div>
-    if(!data) return <div>'Loading'</div>
+    if(error) return <div>fuck you</div>
+    if(!data) return <div>Loading</div>
 
 
     // -- axios
@@ -60,7 +60,7 @@ const ServerCard = ({server}:any) => {
     </h4>
     
     {data.positions.map((pos :any,index:any) => {
-        return <div className='bg-white rounded-md p-3 mt-3'>
+        return <div key={index} className='bg-white rounded-md p-3 mt-3'>
                <div className='flex justify-between'>
               <div className='flex space-x-4 items-center'>
                 <span className="flex space-x-2 items-center">
