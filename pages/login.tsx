@@ -17,7 +17,7 @@ const handleLogin = async   (e: any) =>{
 
     try {
       await login(data.email,data.password)
-      router.push('/dashboard')
+      router.push('/')
   } catch (err) {
       console.log(err)
   } 

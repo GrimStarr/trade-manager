@@ -7,7 +7,7 @@ import ServerList from '../components/serverList'
 import Link from 'next/link'
 
 const style = {
-    bg: `bg-gradient-to-r from-[#2F80ED] to-[#1CB5E0] block h-screen items-center justify-center p-4 md:flex`,
+    bg: `bg-gradient-to-r from-[#2F80ED] to-[#1CB5E0] block absolute inset-0 items-center justify-center p-4 md:flex -z-10`,
     container: `bg-slate-100 max-w-[500px] w-full m-auto rounded-md shadow-xl p-4`,
     heading: `text-3xl font-bold text-center text-gray-800 p-2`,
     form: `flex justify-between gap-1.5`,

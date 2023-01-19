@@ -9,7 +9,12 @@ module.exports = {
       backgroundImage: theme => ({
         'image': "url(leaves.png)",
         'picture': "url(cash.jpg)",
-      })
+      }),
+      boxShadow: {
+        myShadow1: "4.1px -5px 0 0 rgb(17,24,39)",
+        myShadow2: "-4.1px -5px 0 0 rgb(17,24,39)",
+      },
+      
     },
   },
   plugins: [],

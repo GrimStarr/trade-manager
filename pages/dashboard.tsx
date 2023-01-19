@@ -62,7 +62,10 @@ const Dashboard = () => {
         
         //   return res.json();
 
-        axios.post(`http://${value.ip}:5009/buy`,data)
+        console.log(value)
+        
+        if(value.status){
+            axios.post(`http://${value.ip}:5009/buy`,data)
             .then( response  => {
                     response.data.map((value:string)=> (
                         toast.success(value)
@@ -84,6 +87,8 @@ const Dashboard = () => {
                 toast.error(err.response.data)
                 console.log("fuck",err)
             })
+        }
+ 
 
     }
 
@@ -101,7 +106,7 @@ const Dashboard = () => {
     }
 
     return (
-        <div className='bg-gradient-to-r from-[#9f7AEA] to-[#FEE2FE] block h-screen items-center justify-center p-4 md:flex'>
+        <div className='-z-10 absolute inset-0 bg-gradient-to-r from-[#9f7AEA] to-[#FEE2FE] block  items-center justify-center p-4 md:flex'>
             <ToastContainer
                 position="top-right"
                 autoClose={2000}
@@ -114,13 +119,13 @@ const Dashboard = () => {
                 pauseOnHover={false}
                 theme="colored"
                 />
-            <div className="container mx-auto" >
-                <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
+            <div className="container mx-auto " >
+                <div className="flex flex-col lg:flex-row w-full lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
                     
                     <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-4 bg-no-repeat bg-center bg-cover bg-picture">
                         <h1 className="text-white font-medium text-3xl "onClick={() => {router.push('/servers')}} >Homey</h1>
                         <div>
-                    <p className='text-white italic text-lg'>Lez print some dollar<span onClick={() => {logout()}}>. </span></p>
+                    <p className='text-white italic text-lg'>Lez print some dollar</p>
                     </div>
                     </div>
 
