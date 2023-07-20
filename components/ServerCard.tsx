@@ -2,7 +2,6 @@ import { ChatAlt2Icon, DotsVerticalIcon, PaperClipIcon, PlusIcon } from '@heroic
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
-import {io} from 'socket.io-client'
 
 
 const ServerCard = ({server}:any) => {

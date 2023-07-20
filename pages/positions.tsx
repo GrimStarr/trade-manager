@@ -11,6 +11,7 @@ import { onSnapshot, QuerySnapshot, DocumentData } from 'firebase/firestore'
 import { serverCollection } from '../config/controller'
 import { NewServerType } from '../types/server'
 import ServerCard from '../components/ServerCard'
+import Dropdown from '../components/dropdown'
  
 
 const Positions = () => {
@@ -75,6 +76,7 @@ const Positions = () => {
                      
                       </div>
                     })}
+        <Dropdown />
        
 {/*   
         {
